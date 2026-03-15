@@ -11,9 +11,14 @@
 
   <!-- ─── Hero ──────────────────────────────────────── -->
   <section class="hero">
-    <img class="hero-logo" src="assets/logo.png" alt="Skipper logo" />
-    <h1>Skipper</h1>
-    <p>Enable and disable tests directly from a Google Spreadsheet — no code changes required.</p>
+    <img class="hero-logo hero-logo--mobile" src="assets/logo.png" alt="Skipper logo" />
+    <div class="hero-body">
+      <div class="hero-text">
+        <h1>Skipper</h1>
+        <p>Enable and disable tests directly from a Google Spreadsheet — no code changes required.</p>
+      </div>
+      <img class="hero-logo hero-logo--desktop" src="assets/logo.png" alt="" aria-hidden="true" />
+    </div>
   </section>
 
   <!-- ─── About ─────────────────────────────────────── -->
@@ -27,6 +32,105 @@
         friction. Perfect for flaky-test management, feature flags in testing,
         and cross-team coordination.
       </p>
+    </div>
+  </section>
+
+  <!-- ─── Use cases ────────────────────────────────── -->
+  <section class="usecases">
+    <div class="usecases-inner">
+      <h2>Real-world use cases</h2>
+      <p class="usecases-subtitle">Situations where teams reach for Skipper every day.</p>
+
+      <div class="uc-grid">
+
+        <!-- E2E — featured card -->
+        <div class="uc-card uc-card--featured">
+          <div class="uc-featured-header">
+            <span class="uc-icon">⚡</span>
+            <div>
+              <h3>End-to-end tests: the ideal use case</h3>
+              <p>Your E2E suite runs overnight. The next morning, three tests are red — not because of a bug, but because the payment provider had a blip and the SSO endpoint was briefly unreachable. The build is blocked, the team is distracted, and fixing it means either commenting out tests and committing or waiting for the environment to recover. With Skipper, you open the sheet, disable those three tests, and the pipeline is green in under a minute. No commit, no review, no noise.</p>
+            </div>
+          </div>
+          <p class="uc-featured-label">Why E2E tests are the perfect fit</p>
+          <div class="uc-reasons">
+
+            <div class="uc-reason">
+              <span class="uc-icon">🌐</span>
+              <div>
+                <h4>They depend on the outside world</h4>
+                <p>An E2E test can fail because a third-party service is down, DNS is slow, or a certificate expired. It's not a bug in your code — but it still breaks the pipeline. Skipper lets you turn it off while the environment recovers.</p>
+              </div>
+            </div>
+
+            <div class="uc-reason">
+              <span class="uc-icon">🔗</span>
+              <div>
+                <h4>They touch multiple systems at once</h4>
+                <p>If a test covers payment, email, and SSO, all it takes is one of those being in maintenance to make it fail. Being able to surgically disable that single test from the sheet — without touching the code — is far cleaner than a blanket skip.</p>
+              </div>
+            </div>
+
+            <div class="uc-reason">
+              <span class="uc-icon">🐌</span>
+              <div>
+                <h4>They're slow and inherently fragile</h4>
+                <p>E2E tests have more moving parts, more variables, more timing sensitivity. A test that "usually passes" but occasionally fails by a few milliseconds is a classic flaky E2E. Managing them one by one from the sheet is far more sustainable than letting <code>.skip</code> pile up in the codebase.</p>
+              </div>
+            </div>
+
+            <div class="uc-reason">
+              <span class="uc-icon">👀</span>
+              <div>
+                <h4>Non-developers can see what's running</h4>
+                <p>Because the control is in a Google Sheet, a QA engineer, PM, or tech lead can see at a glance what's enabled and what's not — without opening the repo. For E2E tests that often cover business-critical flows, that transparency matters.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="uc-card">
+          <span class="uc-icon">🔴</span>
+          <div>
+            <h3>Intermittently failing tests</h3>
+            <p>A test starts failing on CI every now and then with no obvious cause. Instead of commenting it out and pushing a commit, you disable it from the sheet in 10 seconds and re-enable it once it's fixed — without pulling anyone else into it.</p>
+          </div>
+        </div>
+
+        <div class="uc-card">
+          <span class="uc-icon">🚀</span>
+          <div>
+            <h3>Tests for unreleased features</h3>
+            <p>You've already written tests for a feature that hasn't shipped yet. You keep them in the codebase but disable them in the sheet until the feature goes live — no hardcoded skips cluttering the repo.</p>
+          </div>
+        </div>
+
+        <div class="uc-card">
+          <span class="uc-icon">👥</span>
+          <div>
+            <h3>Cross-team coordination</h3>
+            <p>The backend team is refactoring an API. The backend lead disables the affected integration tests directly from the sheet, without waiting for QA to open a PR or anyone to touch test files.</p>
+          </div>
+        </div>
+
+        <div class="uc-card">
+          <span class="uc-icon">🌍</span>
+          <div>
+            <h3>Environment-specific tests</h3>
+            <p>Some tests only make sense on staging, not on CI — or the other way around. You keep one sheet per environment and manage exclusions there, with no conditional logic bleeding into the test code.</p>
+          </div>
+        </div>
+
+        <div class="uc-card">
+          <span class="uc-icon">🧪</span>
+          <div>
+            <h3>Experimenting with test strategies</h3>
+            <p>You're trying out a new testing approach and want to temporarily bench an entire category of tests. You do it from the sheet, run your experiment, and restore everything — without leaving any trace in the project.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -51,7 +155,9 @@
           </div>
           <p class="card-desc">
             Core library for JavaScript and TypeScript projects. Monorepo with
-            dedicated packages for each test runner.
+            dedicated packages for each test runner. Skipper uses Skipper itself
+            to manage its own test suite —
+            <a href="https://docs.google.com/spreadsheets/d/1Nbjfhklw11uVbi6OCOSeCJI_PThJYzQLlZQbThb4Zvs/edit?usp=sharing" target="_blank" rel="noopener">see the live spreadsheet</a>.
           </p>
           <p class="card-frameworks-label">Supported frameworks</p>
           <div class="card-frameworks">
@@ -125,6 +231,63 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────── -->
+  <section class="faq">
+    <div class="faq-inner">
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <h3>How should the Google Spreadsheet be structured?</h3>
+        <p>
+          Skipper expects a sheet with at least three columns: <code>testId</code>,
+          <code>disabledUntil</code>, and <code>notes</code>. Each row represents
+          one test. The <code>testId</code> is a unique identifier built from the
+          test's file path, describe block, and test name — Skipper generates it
+          automatically. The <code>disabledUntil</code> column accepts a date in
+          <code>YYYY-MM-DD</code> format. The <code>notes</code> column is free text and is useful
+          for leaving context about why a test was disabled.
+        </p>
+        <p>
+          Multiple sheets are supported within the same spreadsheet, which makes
+          it easy to maintain separate configurations per environment — for example
+          one sheet for CI and one for staging.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why <code>disabledUntil</code> instead of an <code>enabled</code> flag?</h3>
+        <p>
+          A boolean <code>enabled</code> column works, but it has a subtle
+          problem: a disabled test stays disabled until someone actively goes
+          back and flips it. In practice, tests get forgotten.
+        </p>
+        <p>
+          <code>disabledUntil</code> forces you to set an expiry when you disable
+          a test. Once that date passes, Skipper automatically treats the test as
+          enabled again — no manual action needed. This keeps the spreadsheet tidy
+          and prevents a growing list of permanently-skipped tests that nobody
+          remembers to revisit. If you genuinely need to disable something
+          indefinitely, set the date far in the future — it's an explicit choice
+          rather than the path of least resistance.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does Skipper use Skipper for its own tests?</h3>
+        <p>
+          Yes. Every repository in the get-skipper organization manages its test
+          suite using Skipper. They all share a single public spreadsheet, each
+          on its own dedicated sheet — so you can see the live state of every
+          project's tests in one place:
+        </p>
+        <a class="faq-link" href="https://docs.google.com/spreadsheets/d/1Nbjfhklw11uVbi6OCOSeCJI_PThJYzQLlZQbThb4Zvs/edit?usp=sharing" target="_blank" rel="noopener">
+          View the get-skipper test spreadsheet →
+        </a>
+      </div>
+
     </div>
   </section>
 
