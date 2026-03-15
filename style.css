@@ -1,0 +1,254 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --radius: 12px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Hero ─────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 72px 24px 56px;
+}
+
+.hero-logo {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 32px;
+  filter: drop-shadow(0 8px 24px rgba(59, 130, 246, 0.15));
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ─── About ─────────────────────────────────────────── */
+.about {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+
+.about-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-inner h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.about-inner p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ─── Integrations ──────────────────────────────────── */
+.integrations {
+  padding: 64px 24px;
+  flex: 1;
+}
+
+.integrations-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.integrations h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.integrations-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ─── Card ───────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Language badges */
+.badge-js   { background: #fef9c3; color: #854d0e; }
+.badge-ts   { background: #dbeafe; color: #1d4ed8; }
+.badge-php  { background: #ede9fe; color: #6d28d9; }
+.badge-go   { background: #d1fae5; color: #065f46; }
+.badge-py   { background: #fef9c3; color: #92400e; }
+.badge-java { background: #fee2e2; color: #991b1b; }
+
+/* Framework badges */
+.badge-fw {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── Frameworks list ────────────────────────────────── */
+.card-frameworks-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.card-frameworks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex: 1;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.card-link:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.card-link svg {
+  flex-shrink: 0;
+}
+
+/* ─── Coming soon card ───────────────────────────────── */
+.card-coming {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+.card-coming .card-link {
+  display: none;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-logo { width: 140px; height: 140px; }
+}

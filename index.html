@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skipper — Test control from a Google Spreadsheet</title>
+  <meta name="description" content="Enable and disable tests directly from a Google Spreadsheet — no code changes required." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── Hero ──────────────────────────────────────── -->
+  <section class="hero">
+    <img class="hero-logo" src="assets/logo.png" alt="Skipper logo" />
+    <h1>Skipper</h1>
+    <p>Enable and disable tests directly from a Google Spreadsheet — no code changes required.</p>
+  </section>
+
+  <!-- ─── About ─────────────────────────────────────── -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>What is Skipper?</h2>
+      <p>
+        Skipper is an open-source library that lets you control which tests run
+        using a shared Google Spreadsheet. Mark a test as disabled in the sheet
+        and Skipper skips it automatically — no pull requests, no deploys, no
+        friction. Perfect for flaky-test management, feature flags in testing,
+        and cross-team coordination.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Integrations ──────────────────────────────── -->
+  <section class="integrations">
+    <div class="integrations-inner">
+      <h2>Integrations</h2>
+      <p class="integrations-subtitle">
+        Use Skipper with your language and test framework of choice.
+      </p>
+
+      <div class="grid">
+
+        <!-- JavaScript / TypeScript -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">skipper</span>
+            <div class="card-badges">
+              <span class="badge badge-js">JavaScript</span>
+              <span class="badge badge-ts">TypeScript</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Core library for JavaScript and TypeScript projects. Monorepo with
+            dedicated packages for each test runner.
+          </p>
+          <p class="card-frameworks-label">Supported frameworks</p>
+          <div class="card-frameworks">
+            <span class="badge badge-fw">Jest</span>
+            <span class="badge badge-fw">Vitest</span>
+            <span class="badge badge-fw">Playwright</span>
+            <span class="badge badge-fw">Cypress</span>
+            <span class="badge badge-fw">Nightwatch</span>
+          </div>
+          <a class="card-link" href="https://github.com/get-skipper/skipper" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- PHP -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">skipper-php</span>
+            <span class="badge badge-php">PHP</span>
+          </div>
+          <p class="card-desc">
+            Skipper for PHP projects, with support for the most popular
+            testing frameworks in the ecosystem.
+          </p>
+          <p class="card-frameworks-label">Supported frameworks</p>
+          <div class="card-frameworks">
+            <span class="badge badge-fw">PHPUnit 10</span>
+            <span class="badge badge-fw">PHPUnit 11</span>
+            <span class="badge badge-fw">PHPUnit 12</span>
+            <span class="badge badge-fw">Pest v2</span>
+            <span class="badge badge-fw">Pest v3</span>
+            <span class="badge badge-fw">Behat 3</span>
+            <span class="badge badge-fw">Codeception 5</span>
+            <span class="badge badge-fw">PHPSpec 7</span>
+            <span class="badge badge-fw">PHPSpec 8</span>
+            <span class="badge badge-fw">Kahlan 5</span>
+            <span class="badge badge-fw">Kahlan 6</span>
+          </div>
+          <a class="card-link" href="https://github.com/get-skipper/skipper-php" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- Go (coming soon) -->
+        <div class="card card-coming">
+          <div class="card-header">
+            <span class="card-title">skipper-go</span>
+            <span class="badge badge-go">Go</span>
+          </div>
+          <p class="card-desc">Coming soon.</p>
+        </div>
+
+        <!-- Python (coming soon) -->
+        <div class="card card-coming">
+          <div class="card-header">
+            <span class="card-title">skipper-python</span>
+            <span class="badge badge-py">Python</span>
+          </div>
+          <p class="card-desc">Coming soon.</p>
+        </div>
+
+        <!-- Java (coming soon) -->
+        <div class="card card-coming">
+          <div class="card-header">
+            <span class="card-title">skipper-java</span>
+            <span class="badge badge-java">Java</span>
+          </div>
+          <p class="card-desc">Coming soon.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────── -->
+  <footer>
+    <p>
+      &copy; 2026
+      <a href="https://github.com/get-skipper" target="_blank" rel="noopener">get-skipper</a>
+      &mdash; MIT Licensed
+    </p>
+  </footer>
+
+</body>
+</html>
