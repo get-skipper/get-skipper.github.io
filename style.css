@@ -13,6 +13,85 @@
   --accent: #3b82f6;
   --accent-dark: #2563eb;
   --radius: 12px;
+
+  /* Badge colors */
+  --badge-js-bg: #fef9c3;     --badge-js-text: #854d0e;
+  --badge-ts-bg: #dbeafe;     --badge-ts-text: #1d4ed8;
+  --badge-php-bg: #ede9fe;    --badge-php-text: #6d28d9;
+  --badge-go-bg: #d1fae5;     --badge-go-text: #065f46;
+  --badge-py-bg: #fef9c3;     --badge-py-text: #92400e;
+  --badge-java-bg: #fee2e2;   --badge-java-text: #991b1b;
+  --badge-fw-bg: #f1f5f9;     --badge-fw-text: #334155;   --badge-fw-border: #cbd5e1;
+
+  /* Featured card */
+  --featured-bg: #eff6ff;
+  --featured-border: #bfdbfe;
+  --featured-label-color: #2563eb;
+  --featured-label-border: #bfdbfe;
+
+  /* Inline code */
+  --code-bg: #dbeafe;   --code-text: #1d4ed8;
+  --faq-code-bg: #f1f5f9;  --faq-code-text: #334155;
+}
+
+/* ─── Dark mode: media query (no-JS fallback) ────────── */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #60a5fa;
+    --accent-dark: #93c5fd;
+
+    --badge-js-bg: #422006;     --badge-js-text: #fde68a;
+    --badge-ts-bg: #1e3a5f;     --badge-ts-text: #93c5fd;
+    --badge-php-bg: #2e1065;    --badge-php-text: #c4b5fd;
+    --badge-go-bg: #064e3b;     --badge-go-text: #6ee7b7;
+    --badge-py-bg: #422006;     --badge-py-text: #fde68a;
+    --badge-java-bg: #450a0a;   --badge-java-text: #fca5a5;
+    --badge-fw-bg: #0f172a;     --badge-fw-text: #94a3b8;  --badge-fw-border: #475569;
+
+    --featured-bg: #172554;
+    --featured-border: #1d4ed8;
+    --featured-label-color: #93c5fd;
+    --featured-label-border: #1d4ed8;
+
+    --code-bg: #1e3a5f;    --code-text: #93c5fd;
+    --faq-code-bg: #0f172a;  --faq-code-text: #94a3b8;
+
+    color-scheme: dark;
+  }
+}
+
+/* ─── Dark mode: manual toggle ───────────────────────── */
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-dark: #93c5fd;
+
+  --badge-js-bg: #422006;     --badge-js-text: #fde68a;
+  --badge-ts-bg: #1e3a5f;     --badge-ts-text: #93c5fd;
+  --badge-php-bg: #2e1065;    --badge-php-text: #c4b5fd;
+  --badge-go-bg: #064e3b;     --badge-go-text: #6ee7b7;
+  --badge-py-bg: #422006;     --badge-py-text: #fde68a;
+  --badge-java-bg: #450a0a;   --badge-java-text: #fca5a5;
+  --badge-fw-bg: #0f172a;     --badge-fw-text: #94a3b8;  --badge-fw-border: #475569;
+
+  --featured-bg: #172554;
+  --featured-border: #1d4ed8;
+  --featured-label-color: #93c5fd;
+  --featured-label-border: #1d4ed8;
+
+  --code-bg: #1e3a5f;    --code-text: #93c5fd;
+  --faq-code-bg: #0f172a;  --faq-code-text: #94a3b8;
+
+  color-scheme: dark;
 }
 
 body {
@@ -49,6 +128,7 @@ body {
   object-fit: contain;
   filter: drop-shadow(0 8px 24px rgba(59, 130, 246, 0.15));
   flex-shrink: 0;
+  border-radius: 5px;
 }
 
 .hero-logo--mobile { display: none; }
@@ -177,18 +257,18 @@ body {
 }
 
 /* Language badges */
-.badge-js   { background: #fef9c3; color: #854d0e; }
-.badge-ts   { background: #dbeafe; color: #1d4ed8; }
-.badge-php  { background: #ede9fe; color: #6d28d9; }
-.badge-go   { background: #d1fae5; color: #065f46; }
-.badge-py   { background: #fef9c3; color: #92400e; }
-.badge-java { background: #fee2e2; color: #991b1b; }
+.badge-js   { background: var(--badge-js-bg);   color: var(--badge-js-text); }
+.badge-ts   { background: var(--badge-ts-bg);   color: var(--badge-ts-text); }
+.badge-php  { background: var(--badge-php-bg);  color: var(--badge-php-text); }
+.badge-go   { background: var(--badge-go-bg);   color: var(--badge-go-text); }
+.badge-py   { background: var(--badge-py-bg);   color: var(--badge-py-text); }
+.badge-java { background: var(--badge-java-bg); color: var(--badge-java-text); }
 
 /* Framework badges */
 .badge-fw {
-  background: #f1f5f9;
-  color: #334155;
-  border: 1px solid #cbd5e1;
+  background: var(--badge-fw-bg);
+  color: var(--badge-fw-text);
+  border: 1px solid var(--badge-fw-border);
 }
 
 .card-desc {
@@ -308,8 +388,8 @@ body {
 .uc-card--featured {
   flex-direction: column;
   gap: 24px;
-  background: #eff6ff;
-  border-color: #bfdbfe;
+  background: var(--featured-bg);
+  border-color: var(--featured-border);
 }
 
 .uc-featured-header {
@@ -336,9 +416,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #2563eb;
+  color: var(--featured-label-color);
   padding-top: 4px;
-  border-top: 1px solid #bfdbfe;
+  border-top: 1px solid var(--featured-label-border);
 }
 
 .uc-reasons {
@@ -367,8 +447,8 @@ body {
 .uc-reason code {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-size: 0.8em;
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: var(--code-bg);
+  color: var(--code-text);
   padding: 1px 5px;
   border-radius: 4px;
 }
@@ -428,8 +508,8 @@ body {
 .faq-item code {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-size: 0.8em;
-  background: #f1f5f9;
-  color: #334155;
+  background: var(--faq-code-bg);
+  color: var(--faq-code-text);
   padding: 1px 5px;
   border-radius: 4px;
   border: 1px solid var(--border);
@@ -464,6 +544,50 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ─── Theme toggle button ────────────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Show/hide icons based on current theme */
+.icon-sun { display: none; }
+.icon-moon { display: block; }
+
+html[data-theme="dark"] .icon-sun { display: block; }
+html[data-theme="dark"] .icon-moon { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .icon-sun { display: block; }
+  html:not([data-theme="light"]) .icon-moon { display: none; }
 }
 
 /* ─── Responsive ─────────────────────────────────────── */
