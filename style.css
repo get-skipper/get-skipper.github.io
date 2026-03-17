@@ -21,6 +21,7 @@
   --badge-go-bg: #d1fae5;     --badge-go-text: #065f46;
   --badge-py-bg: #fef9c3;     --badge-py-text: #92400e;
   --badge-java-bg: #fee2e2;   --badge-java-text: #991b1b;
+  --badge-net-bg: #ede9fe;    --badge-net-text: #4c1d95;
   --badge-fw-bg: #f1f5f9;     --badge-fw-text: #334155;   --badge-fw-border: #cbd5e1;
 
   /* Featured card */
@@ -51,6 +52,7 @@
     --badge-go-bg: #064e3b;     --badge-go-text: #6ee7b7;
     --badge-py-bg: #422006;     --badge-py-text: #fde68a;
     --badge-java-bg: #450a0a;   --badge-java-text: #fca5a5;
+    --badge-net-bg: #2e1065;    --badge-net-text: #c4b5fd;
     --badge-fw-bg: #0f172a;     --badge-fw-text: #94a3b8;  --badge-fw-border: #475569;
 
     --featured-bg: #172554;
@@ -81,6 +83,7 @@ html[data-theme="dark"] {
   --badge-go-bg: #064e3b;     --badge-go-text: #6ee7b7;
   --badge-py-bg: #422006;     --badge-py-text: #fde68a;
   --badge-java-bg: #450a0a;   --badge-java-text: #fca5a5;
+  --badge-net-bg: #2e1065;    --badge-net-text: #c4b5fd;
   --badge-fw-bg: #0f172a;     --badge-fw-text: #94a3b8;  --badge-fw-border: #475569;
 
   --featured-bg: #172554;
@@ -263,6 +266,7 @@ body {
 .badge-go   { background: var(--badge-go-bg);   color: var(--badge-go-text); }
 .badge-py   { background: var(--badge-py-bg);   color: var(--badge-py-text); }
 .badge-java { background: var(--badge-java-bg); color: var(--badge-java-text); }
+.badge-net  { background: var(--badge-net-bg);  color: var(--badge-net-text); }
 
 /* Framework badges */
 .badge-fw {
