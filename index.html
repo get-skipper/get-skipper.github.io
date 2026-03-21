@@ -324,6 +324,147 @@
     </div>
   </section>
 
+  <!-- ─── Getting Started ───────────────────────────── -->
+  <section class="getting-started">
+    <div class="gs-inner">
+      <h2>Getting Started</h2>
+      <p class="gs-subtitle">Up and running in 4 steps.</p>
+
+      <ol class="gs-steps">
+
+        <li class="gs-step">
+          <span class="gs-num">1</span>
+          <div class="gs-body">
+            <h3>Set up the Google Spreadsheet</h3>
+            <p>Create a new Google Spreadsheet and add three columns: <code>testId</code>, <code>disabledUntil</code>, and <code>notes</code>. Then create a <strong>Google Service Account</strong>, download its JSON credentials file, and share the spreadsheet with the service account email address.</p>
+            <p>You can start from the ready-made template — just make a copy and use it as your own: <a href="https://docs.google.com/spreadsheets/d/1ENyiasXlAe3SHA1dU5H-QP99lF6ApSMaWTHwSIoC2kg/edit?usp=sharing" target="_blank" rel="noopener">Open the template spreadsheet →</a></p>
+          </div>
+        </li>
+
+        <li class="gs-step">
+          <span class="gs-num">2</span>
+          <div class="gs-body">
+            <h3>Install the package</h3>
+            <div class="gs-tabs">
+              <div class="gs-tab-list" role="tablist">
+                <button class="gs-tab is-active" data-gs-tab="js" role="tab">JS / TS</button>
+                <button class="gs-tab" data-gs-tab="php" role="tab">PHP</button>
+                <button class="gs-tab" data-gs-tab="go" role="tab">Go</button>
+                <button class="gs-tab" data-gs-tab="net" role="tab">.NET</button>
+                <button class="gs-tab" data-gs-tab="java" role="tab">Java</button>
+              </div>
+
+              <div class="gs-panel is-active" data-gs-panel="js">
+                <p class="gs-panel-hint">Install the adapter for your test runner:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">Jest</span><pre><code>npm install @get-skipper/jest</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Vitest</span><pre><code>npm install @get-skipper/vitest</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Playwright</span><pre><code>npm install @get-skipper/playwright</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Cypress</span><pre><code>npm install @get-skipper/cypress</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Nightwatch</span><pre><code>npm install @get-skipper/nightwatch</code></pre></div>
+                </div>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="php">
+                <pre><code>composer require get-skipper/skipper-php</code></pre>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="go">
+                <p class="gs-panel-hint">Install the adapter for your test runner:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">testing</span><pre><code>go get github.com/get-skipper/skipper-go/testing</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Testify</span><pre><code>go get github.com/get-skipper/skipper-go/testify</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Ginkgo</span><pre><code>go get github.com/get-skipper/skipper-go/ginkgo</code></pre></div>
+                </div>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="net">
+                <p class="gs-panel-hint">Install the adapter for your test runner:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">xUnit</span><pre><code>dotnet add package GetSkipper.XUnit</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">NUnit</span><pre><code>dotnet add package GetSkipper.NUnit</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">MSTest</span><pre><code>dotnet add package GetSkipper.MSTest</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Playwright</span><pre><code>dotnet add package GetSkipper.Playwright</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">SpecFlow</span><pre><code>dotnet add package GetSkipper.SpecFlow</code></pre></div>
+                </div>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="java">
+                <p class="gs-panel-hint">Add the dependency for your test runner to <code>pom.xml</code>:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd">
+                    <span class="gs-cmd-label">JUnit 5</span>
+                    <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.getskipper&lt;/groupId&gt;
+  &lt;artifactId&gt;skipper-junit5&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+                  </div>
+                  <div class="gs-cmd">
+                    <span class="gs-cmd-label">TestNG</span>
+                    <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.getskipper&lt;/groupId&gt;
+  &lt;artifactId&gt;skipper-testng&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+                  </div>
+                  <div class="gs-cmd">
+                    <span class="gs-cmd-label">Cucumber</span>
+                    <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.getskipper&lt;/groupId&gt;
+  &lt;artifactId&gt;skipper-cucumber&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+                  </div>
+                  <div class="gs-cmd">
+                    <span class="gs-cmd-label">Playwright</span>
+                    <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.getskipper&lt;/groupId&gt;
+  &lt;artifactId&gt;skipper-playwright&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="gs-step">
+          <span class="gs-num">3</span>
+          <div class="gs-body">
+            <h3>Set the environment variables</h3>
+            <p>Skipper reads its configuration from two environment variables:</p>
+            <div class="gs-env-list">
+              <div class="gs-env-var">
+                <code>SKIPPER_SPREADSHEET_ID</code>
+                <span>The ID from your spreadsheet URL</span>
+              </div>
+              <div class="gs-env-var">
+                <code>GOOGLE_CREDS_B64</code>
+                <span>Your service account JSON key, base64-encoded</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="gs-step">
+          <span class="gs-num">4</span>
+          <div class="gs-body">
+            <h3>Connect Skipper to your test runner</h3>
+            <p>Each integration hooks into your framework's native setup mechanism — no changes to individual test files required. See the setup guide for your framework in the corresponding GitHub repository.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
   <!-- ─── FAQ ──────────────────────────────────────── -->
   <section class="faq">
     <div class="faq-inner">
@@ -403,6 +544,19 @@
 
 
   <script>
+    (function () {
+      document.querySelectorAll('[data-gs-tab]').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var id = this.getAttribute('data-gs-tab');
+          var container = this.closest('.gs-tabs');
+          container.querySelectorAll('.gs-tab').forEach(function (t) { t.classList.remove('is-active'); });
+          container.querySelectorAll('.gs-panel').forEach(function (p) { p.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          container.querySelector('[data-gs-panel="' + id + '"]').classList.add('is-active');
+        });
+      });
+    })();
+
     (function () {
       var btn = document.getElementById('theme-toggle');
       btn.addEventListener('click', function () {
