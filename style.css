@@ -748,6 +748,75 @@ html[data-theme="dark"] .gs-panel pre {
   display: none;
 }
 
+/* ─── CLI Output ─────────────────────────────────────── */
+.cli-output {
+  padding: 64px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.cli-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cli-output h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.cli-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.terminal {
+  background: #0d1117;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  margin-top: 16px;
+}
+
+.terminal-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.terminal-bar span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-bar span:nth-child(1) { background: #ff5f57; }
+.terminal-bar span:nth-child(2) { background: #febc2e; }
+.terminal-bar span:nth-child(3) { background: #28c840; }
+
+.terminal pre {
+  margin: 0;
+  padding: 20px 24px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, "Cascadia Code", monospace;
+  font-size: 0.815rem;
+  line-height: 1.65;
+  color: #cdd9e5;
+  background: transparent;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.t-pass  { color: #3fb950; }
+.t-skip  { color: #d29922; }
+.t-skipper { color: #58a6ff; font-weight: 600; }
+.t-muted { color: #6e7681; }
+
 /* ─── FAQ ────────────────────────────────────────────── */
 .faq {
   padding: 64px 24px;

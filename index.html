@@ -465,6 +465,112 @@
     </div>
   </section>
 
+  <!-- ─── CLI Output ──────────────────────────────── -->
+  <section class="cli-output">
+    <div class="cli-inner">
+      <h2>See it in action</h2>
+      <p class="cli-subtitle">What your test run looks like when Skipper is active.</p>
+
+      <div class="gs-tabs">
+        <div class="gs-tab-list" role="tablist">
+          <button class="gs-tab is-active" data-gs-tab="clio-jest" role="tab">Jest</button>
+          <button class="gs-tab" data-gs-tab="clio-php" role="tab">PHPUnit</button>
+          <button class="gs-tab" data-gs-tab="clio-go" role="tab">Go</button>
+          <button class="gs-tab" data-gs-tab="clio-net" role="tab">.NET</button>
+          <button class="gs-tab" data-gs-tab="clio-java" role="tab">JUnit 5</button>
+        </div>
+
+        <div class="gs-panel is-active" data-gs-panel="clio-jest">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-pass"> PASS </span> src/checkout/checkout.test.ts
+
+  Checkout
+    <span class="t-pass">✓</span> adds item to cart <span class="t-muted">(23 ms)</span>
+    <span class="t-skip">○</span> processes payment <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-12-31 · flaky on CI</span>
+    <span class="t-pass">✓</span> applies discount code <span class="t-muted">(19 ms)</span>
+
+<span class="t-skip"> SKIP </span> src/auth/sso.test.ts
+
+  SSO
+    <span class="t-skip">○</span> signs in with Google <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-04-15 · SSO maintenance</span>
+
+<span class="t-muted">Test Suites: <span class="t-skip">1 skipped</span>, <span class="t-pass">1 passed</span>, 2 total
+Tests:       <span class="t-skip">2 skipped</span>, <span class="t-pass">2 passed</span>, 4 total
+Time:        1.842 s</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-php">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-muted">PHPUnit 11.0.0 by Sebastian Bergmann and contributors.</span>
+
+<span class="t-pass">.</span><span class="t-pass">.</span><span class="t-skip">S</span><span class="t-pass">.</span><span class="t-skip">S</span>                                                       5 / 5 (100%)
+
+<span class="t-muted">Time: 00:00.187, Memory: 8.00 MB</span>
+
+<span class="t-skipper">[skipper]</span> CheckoutTest::testProcessesPayment <span class="t-muted">— disabled until 2025-12-31 · flaky on CI</span>
+<span class="t-skipper">[skipper]</span> SsoTest::testSignInWithGoogle <span class="t-muted">— disabled until 2025-04-15 · SSO maintenance</span>
+
+<span class="t-skip">OK, but there were issues!
+Tests: 5, Assertions: 3, Skipped: 2.</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-go">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-pass">--- PASS: TestAddsItemToCart (0.023s)</span>
+<span class="t-skip">--- SKIP: TestProcessesPayment (0.00s)</span>
+    <span class="t-muted">suite_test.go:14:</span> <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-12-31 · flaky on CI</span>
+<span class="t-pass">--- PASS: TestAppliesDiscountCode (0.018s)</span>
+<span class="t-skip">--- SKIP: TestSignInWithGoogle (0.00s)</span>
+    <span class="t-muted">suite_test.go:28:</span> <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-04-15 · SSO maintenance</span>
+<span class="t-pass">PASS</span>
+<span class="t-muted">ok      github.com/myorg/myapp  0.045s</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-net">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre>  CheckoutTests
+    <span class="t-pass">✓</span>  AddsItemToCart <span class="t-muted">[23 ms]</span>
+    <span class="t-skip">○</span>  ProcessesPayment <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-12-31 · flaky on CI</span>
+    <span class="t-pass">✓</span>  AppliesDiscountCode <span class="t-muted">[19 ms]</span>
+
+  SsoTests
+    <span class="t-skip">○</span>  SignInWithGoogle <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-04-15 · SSO maintenance</span>
+
+<span class="t-pass">Passed!</span>  <span class="t-muted">Failed: 0, Passed: 2, Skipped: 2, Total: 4, Duration: 42 ms</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-java">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-muted">[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.myorg.CheckoutTest</span>
+<span class="t-muted">[INFO]</span>   <span class="t-pass">✓</span> addsItemToCart
+<span class="t-muted">[INFO]</span>   <span class="t-skip">○</span> processesPayment <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-12-31 · flaky on CI</span>
+<span class="t-muted">[INFO]</span>   <span class="t-pass">✓</span> appliesDiscountCode
+<span class="t-muted">[INFO] Running com.myorg.SsoTest</span>
+<span class="t-muted">[INFO]</span>   <span class="t-skip">○</span> signInWithGoogle <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-04-15 · SSO maintenance</span>
+<span class="t-muted">[INFO]
+[INFO] Results:
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 2
+[INFO]
+[INFO] </span><span class="t-pass">BUILD SUCCESS</span></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── FAQ ──────────────────────────────────────── -->
   <section class="faq">
     <div class="faq-inner">
