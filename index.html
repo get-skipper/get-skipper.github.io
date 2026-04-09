@@ -276,7 +276,7 @@
         </div>
 
         <!-- Python -->
-        <div class="card card--wip">
+        <div class="card">
           <div class="card-header">
             <span class="card-title">skipper-python</span>
             <span class="badge badge-py">Python</span>
@@ -351,6 +351,7 @@
                 <button class="gs-tab" data-gs-tab="php" role="tab">PHP</button>
                 <button class="gs-tab" data-gs-tab="go" role="tab">Go</button>
                 <button class="gs-tab" data-gs-tab="net" role="tab">.NET</button>
+                <button class="gs-tab" data-gs-tab="python" role="tab">Python</button>
                 <button class="gs-tab" data-gs-tab="java" role="tab">Java</button>
               </div>
 
@@ -386,6 +387,15 @@
                   <div class="gs-cmd"><span class="gs-cmd-label">MSTest</span><pre><code>dotnet add package GetSkipper.MSTest</code></pre></div>
                   <div class="gs-cmd"><span class="gs-cmd-label">Playwright</span><pre><code>dotnet add package GetSkipper.Playwright</code></pre></div>
                   <div class="gs-cmd"><span class="gs-cmd-label">SpecFlow</span><pre><code>dotnet add package GetSkipper.SpecFlow</code></pre></div>
+                </div>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="python">
+                <p class="gs-panel-hint">Install the adapter for your test runner:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">pytest</span><pre><code>pip install skipper-pytest</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">unittest</span><pre><code>pip install skipper-unittest</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Playwright</span><pre><code>pip install skipper-playwright</code></pre></div>
                 </div>
               </div>
 
@@ -477,6 +487,7 @@
           <button class="gs-tab" data-gs-tab="clio-php" role="tab">PHPUnit</button>
           <button class="gs-tab" data-gs-tab="clio-go" role="tab">Go</button>
           <button class="gs-tab" data-gs-tab="clio-net" role="tab">.NET</button>
+          <button class="gs-tab" data-gs-tab="clio-python" role="tab">pytest</button>
           <button class="gs-tab" data-gs-tab="clio-java" role="tab">JUnit 5</button>
         </div>
 
@@ -544,6 +555,22 @@ Tests: 5, Assertions: 3, Skipped: 2.</span></pre>
     <span class="t-skip">○</span>  SignInWithGoogle <span class="t-skipper">[skipper]</span> <span class="t-muted">disabled until 2025-04-15 · SSO maintenance</span>
 
 <span class="t-pass">Passed!</span>  <span class="t-muted">Failed: 0, Passed: 2, Skipped: 2, Total: 4, Duration: 42 ms</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-python">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-muted">========================= test session starts ==========================</span>
+<span class="t-muted">collected 4 items</span>
+
+test_checkout.py <span class="t-pass">.</span><span class="t-skip">s</span><span class="t-pass">.</span>                                               <span class="t-muted">[ 75%]</span>
+test_auth.py <span class="t-skip">s</span>                                                        <span class="t-muted">[100%]</span>
+
+<span class="t-skipper">[skipper]</span> test_checkout.py::test_processes_payment <span class="t-muted">— disabled until 2025-12-31 · flaky on CI</span>
+<span class="t-skipper">[skipper]</span> test_auth.py::test_sign_in_with_google <span class="t-muted">— disabled until 2025-04-15 · SSO maintenance</span>
+
+<span class="t-muted">=================== </span><span class="t-pass">2 passed</span><span class="t-muted">, </span><span class="t-skip">2 skipped</span><span class="t-muted"> in 0.312s ====================</span></pre>
           </div>
         </div>
 
