@@ -328,6 +328,50 @@
           </a>
         </div>
 
+        <!-- Rust -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">skipper-rust</span>
+            <span class="badge badge-rs">Rust</span>
+          </div>
+          <p class="card-desc">
+            Skipper for Rust projects, with an attribute for the built-in test harness, rstest and tokio, plus a cargo runner for reports and sync.
+          </p>
+          <p class="card-frameworks-label">Supported frameworks</p>
+          <div class="card-frameworks">
+            <span class="badge badge-fw">cargo test</span>
+            <span class="badge badge-fw">rstest</span>
+            <span class="badge badge-fw">tokio</span>
+            <span class="badge badge-fw">cucumber-rs</span>
+          </div>
+          <a class="card-link" href="https://github.com/get-skipper/skipper-rust" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- Elixir -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">skipper-elixir</span>
+            <span class="badge badge-ex">Elixir</span>
+          </div>
+          <p class="card-desc">
+            Skipper for Elixir projects, with adapters for ExUnit (including browser tests) and ESpec.
+          </p>
+          <p class="card-frameworks-label">Supported frameworks</p>
+          <div class="card-frameworks">
+            <span class="badge badge-fw">ExUnit</span>
+            <span class="badge badge-fw">Wallaby</span>
+            <span class="badge badge-fw">Hound</span>
+            <span class="badge badge-fw">ESpec</span>
+          </div>
+          <a class="card-link" href="https://github.com/get-skipper/skipper-elixir" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -361,6 +405,8 @@
                 <button class="gs-tab" data-gs-tab="net" role="tab">.NET</button>
                 <button class="gs-tab" data-gs-tab="python" role="tab">Python</button>
                 <button class="gs-tab" data-gs-tab="java" role="tab">Java</button>
+                <button class="gs-tab" data-gs-tab="rust" role="tab">Rust</button>
+                <button class="gs-tab" data-gs-tab="elixir" role="tab">Elixir</button>
               </div>
 
               <div class="gs-panel is-active" data-gs-panel="js">
@@ -449,6 +495,23 @@
                 </div>
               </div>
 
+              <div class="gs-panel" data-gs-panel="rust">
+                <p class="gs-panel-hint">Add the crate for your test runner:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">cargo test / rstest / tokio</span><pre><code>cargo add --dev get-skipper</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">cucumber-rs</span><pre><code>cargo add --dev skipper-cucumber</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">Runner (report + sync)</span><pre><code>cargo install cargo-skipper</code></pre></div>
+                </div>
+              </div>
+
+              <div class="gs-panel" data-gs-panel="elixir">
+                <p class="gs-panel-hint">Add the dependency for your test runner to <code>mix.exs</code>:</p>
+                <div class="gs-cmd-list">
+                  <div class="gs-cmd"><span class="gs-cmd-label">ExUnit / Wallaby / Hound</span><pre><code>{:skipper_ex_unit, "~&gt; 1.0", only: :test}</code></pre></div>
+                  <div class="gs-cmd"><span class="gs-cmd-label">ESpec</span><pre><code>{:skipper_espec, "~&gt; 1.0", only: :test}</code></pre></div>
+                </div>
+              </div>
+
             </div>
           </div>
         </li>
@@ -497,6 +560,8 @@
           <button class="gs-tab" data-gs-tab="clio-net" role="tab">.NET</button>
           <button class="gs-tab" data-gs-tab="clio-python" role="tab">pytest</button>
           <button class="gs-tab" data-gs-tab="clio-java" role="tab">JUnit 5</button>
+          <button class="gs-tab" data-gs-tab="clio-rust" role="tab">cargo test</button>
+          <button class="gs-tab" data-gs-tab="clio-elixir" role="tab">ExUnit</button>
         </div>
 
         <div class="gs-panel is-active" data-gs-panel="clio-jest">
@@ -599,6 +664,40 @@ test_auth.py <span class="t-skip">s</span>                                      
 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 2
 [INFO]
 [INFO] </span><span class="t-pass">BUILD SUCCESS</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-rust">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-muted">$ cargo skipper test</span>
+<span class="t-muted">running 4 tests</span>
+<span class="t-skipper">[skipper]</span> SKIP tests/checkout.rs &gt; processes_payment<span class="t-muted">: test disabled until 2025-12-31</span>
+<span class="t-skipper">[skipper]</span> SKIP tests/auth.rs &gt; sign_in_with_google<span class="t-muted">: test disabled until 2025-04-15</span>
+test adds_item_to_cart ... <span class="t-pass">ok</span>
+test processes_payment ... <span class="t-pass">ok</span>
+test applies_discount_code ... <span class="t-pass">ok</span>
+test sign_in_with_google ... <span class="t-pass">ok</span>
+
+<span class="t-muted">test result: </span><span class="t-pass">ok</span><span class="t-muted">. 4 passed; 0 failed — </span><span class="t-skip">2 suppressed by Skipper</span></pre>
+          </div>
+        </div>
+
+        <div class="gs-panel" data-gs-panel="clio-elixir">
+          <div class="terminal">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><span class="t-muted">$ mix test --trace</span>
+
+<span class="t-muted">MyApp.CheckoutTest [test/checkout_test.exs]</span>
+  <span class="t-pass">*</span> test adds item to cart <span class="t-muted">(0.4ms)</span>
+  <span class="t-skip">*</span> test processes payment <span class="t-muted">(skipped)</span> <span class="t-skipper">[skipper]</span> <span class="t-muted">Test disabled until 2025-12-31</span>
+  <span class="t-pass">*</span> test applies discount code <span class="t-muted">(0.3ms)</span>
+
+<span class="t-muted">MyAppWeb.SsoFeatureTest [test/features/sso_test.exs]</span>
+  <span class="t-skip">*</span> feature sign in with Google <span class="t-muted">(skipped)</span> <span class="t-skipper">[skipper]</span> <span class="t-muted">Test disabled until 2025-04-15</span>
+
+<span class="t-muted">Finished in 0.05 seconds</span>
+<span class="t-pass">1 feature, 3 tests, 0 failures</span><span class="t-muted">, </span><span class="t-skip">2 skipped</span></pre>
           </div>
         </div>
 
